@@ -1,0 +1,19 @@
+
+bin
+.idea
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+/product_images/
+*.log
+
+*.pyc
+
+assets/*
+lib
