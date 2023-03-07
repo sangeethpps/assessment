@@ -17,3 +17,5 @@ frontend:
 
 
 if above steps are done you are good to go happy hacking :)
+
+Sample Video of the project can be seen in wiki section.
