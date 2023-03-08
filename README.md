@@ -15,6 +15,11 @@ frontend:
 2.npm install
 3.npm start
 
+to see the submitted records in db please follow the below steps
+go to http://127.0.0.1:8000/admin
+and login with sangeeth as username and password as sangeeth
+then you will see surveydetails click on the record you could see records ..
+attached sample picture in wiki section.
 
 if above steps are done you are good to go happy hacking :)
 
