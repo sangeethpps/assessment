@@ -1,9 +1,7 @@
 import './App.css'
 import {useEffect, useState} from "react";
-import swal from 'sweetalert';
-
 function SurveyPage() {
-    const[isLoaded,setIsLoaded]=useState(false)
+    let isLoaded=false
     const[questions,setQuestions]=useState([])
     const[sessionId,setSessionId]=useState('')
     const[currentQuestion,setCurrentQuestion]=useState('')
@@ -12,20 +10,19 @@ function SurveyPage() {
     const[enablePrevious,setEnablePrevious]=useState(false)
     const[enableSkip,setEnableSkip]=useState(true)
     const[checkboxValue,setCheckboxValue]=useState({})
-
     useEffect(()=>{
         if(!isLoaded)
         {
+            isLoaded=true
             fetch("api/feedback/questions/",{method:"POST",
                 headers: {
                     "Content-Type": "application/json",
-                },})
+                }})
                 .then(res => res.json()).then((result)=>{
                     if(Object.keys(result).length>0)
                     {
                         setQuestions(result['questions'])
                         setSessionId(result['session_id'])
-                        setIsLoaded(true)
                         setCurrentQuestion(0)
                         setEnablePrevious(false)
                         initializeCheckBoxes()
@@ -34,6 +31,8 @@ function SurveyPage() {
             }).catch((exception)=>{
                 console.log(exception)
             })
+
+
         }
 
         },[])
